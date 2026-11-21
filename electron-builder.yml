@@ -1,0 +1,15 @@
+appId: com.ovela.app
+producttName: Ovela
+directories:
+  output: dist
+files: 
+  - out/**
+asarUnpack:
+  - node_module/better-sqlite3/**
+win:
+  target: nsis
+mac: 
+  target: dmg
+linux: 
+  target: AppImage
+  
