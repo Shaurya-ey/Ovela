@@ -2,9 +2,14 @@
   "name": "ovela",
   "version": "1.0.0",
   "description": "A desktop app that keeps your notes, documents and AI chats in one place and tells you what to work on next.",
-  "main": "index.js",
+  "main": "./out/main/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tcc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "npm run build && electron-builder"
   },
   "repository": {
     "type": "git",
@@ -37,5 +42,6 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
     "vitest": "^5.1.1"
-  }
+  },
+  "private": true
 }
